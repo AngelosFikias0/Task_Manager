@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="head">
+    <h1>Task Manager</h1>
+  </div>
+  <div id="dfile1">
+    <fieldset id="file1">
+      <legend> Manage: </legend>
+      <form id="taskForm">
+        <label>Create task:</label>
+        <input type="text" name="createid" id="createTask">
+        <input type="submit" name="create" value="Create Task">
+        <label>Completed task:</label>
+        <input type="text" name="doneid" id="completeTask">
+        <input type="submit" name="done" value="Complete Task">
+      </form>
+    </fieldset>
+  </div>
+  <div id="counters">
+    <p id="compcount2">
+        Tasks to complete:
+    </p>
+    <p id="compcountafter2">
+        0
+    </p>
+    <p id="compcount">
+        Completed Tasks:
+    </p>
+    <p id="compcountafter">
+        0
+    </p>
+  </div>
+  <div id="dfile2">
+    <fieldset id="file2">
+      <legend> Your tasks: </legend>
+      <table id="taskTable">
+        <tr>
+          <th>Current tasks</th>
+          <th>Completed tasks</th>
+        </tr>
+        <tr>
+          <td id="currentTasks">please insert task:</td>
+          <td id="completedTasks">please complete task:</td>
+        </tr>
+      </table>
+    </fieldset>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

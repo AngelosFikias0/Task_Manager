@@ -7,12 +7,18 @@ const done = document.getElementById('completeTask');
 const taskForm = document.getElementById('taskForm');
 const countershow = document.getElementById('compcountafter');
 const countershow2 = document.getElementById('compcountafter2');
+const lab1 = document.getElementById('la1');
+const lab2 = document.getElementById('la2');
 
 let countcomp=0;
 let countcomp2=0;
 
 taskForm.addEventListener('submit', function(evt) {
     evt.preventDefault();  
+    lab1.innerHTML='Create task:';
+    lab1.style.color='black';
+    lab2.innerHTML='Completed task:';
+    lab2.style.color='black';
 
     if (evt.submitter.name === 'create') {
         let task = create.value.trim();
@@ -25,7 +31,7 @@ taskForm.addEventListener('submit', function(evt) {
             create.value = ''; 
             countcomp2++;
             countershow2.innerHTML=countcomp2;
-        }else{alert('Task is empty')}
+        }else{lab1.innerHTML='Task is empty!';lab1.style.color='red'}
     } else if (evt.submitter.name === 'done') {
         let task = done.value.trim();
         if (task) {
@@ -39,10 +45,8 @@ taskForm.addEventListener('submit', function(evt) {
                 countershow.innerHTML=countcomp;
                 countcomp2--;
                 countershow2.innerHTML=countcomp2;
-            } else {
-                alert('Task not found in current tasks.');
-            }
-        }
+            }else{lab2.innerHTML='Task not found in current tasks!';lab2.style.color='red';}
+        }else{lab2.innerHTML='Please create task first!';lab2.style.color='red';}
     }
 }, false);
 
